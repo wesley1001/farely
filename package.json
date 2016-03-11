@@ -1,0 +1,23 @@
+{
+  "name": "farely",
+  "description": "React Native port of farely.io",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "sotojuan/farely",
+  "author": {
+    "name": "Juan Soto",
+    "email": "juan@juansoto.me",
+    "url": "juansoto.me"
+  },
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "standard | snazzy --verbose"
+  },
+  "dependencies": {
+    "react-native": "^0.21.0"
+  },
+  "devDependencies": {
+    "snazzy": "^3.0.0",
+    "standard": "^5.4.1"
+  }
+}

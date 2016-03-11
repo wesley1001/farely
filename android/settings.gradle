@@ -1,0 +1,3 @@
+rootProject.name = 'farely'
+
+include ':app'
