@@ -1,4 +1,5 @@
 import React, {Component} from 'react-native'
+import Header from './components/Header'
 
 const {StyleSheet, View, Text} = React
 
@@ -6,6 +7,7 @@ class App extends Component {
   render () {
     return (
     <View style={styles.container}>
+      <Header />
       <Text style={styles.text}>
         Hello!
       </Text>
@@ -17,11 +19,11 @@ class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    marginTop: 25
   },
   text: {
-    fontSize: 30
+    fontSize: 30,
+    alignSelf: 'center'
   }
 })
 
