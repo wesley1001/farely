@@ -1,14 +1,12 @@
 import React, {Component} from 'react-native'
-import Dimensions from 'Dimensions'
 
 const {StyleSheet, View, Text} = React
-const {width} = Dimensions.get('window')
 
 class Header extends Component {
   render () {
     return (
       <View style={styles.header}>
-        <Text style={[styles.text]}>Farely</Text>
+        <Text style={styles.text}>Farely</Text>
       </View>
     )
   }
@@ -16,17 +14,16 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    backgroundColor: '#3F5765',
+    flexDirection: 'column',
     justifyContent: 'center',
-    padding: 10
+    paddingTop: 15,
+    paddingBottom: 10
   },
   text: {
-    fontSize: 32,
+    color: '#EFEFEF',
+    fontSize: 36,
     alignSelf: 'center'
-  },
-  scaledText: {
-    fontSize: width / 7
   }
 })
 
