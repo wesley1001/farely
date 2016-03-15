@@ -8,9 +8,11 @@ class App extends Component {
     return (
     <View style={styles.container}>
       <Header />
-      <Text style={styles.text}>
-        Hello!
-      </Text>
+      <View style={styles.content}>
+        <Text style={styles.text}>
+          Hello!
+        </Text>
+      </View>
     </View>
     )
   }
@@ -18,12 +20,17 @@ class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#EFEFEF',
+    flex: 1
+  },
+  content: {
     flex: 1,
-    marginTop: 25
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   text: {
-    fontSize: 30,
-    alignSelf: 'center'
+    fontSize: 28
   }
 })
 
