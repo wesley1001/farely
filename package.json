@@ -11,13 +11,20 @@
   },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "standard | snazzy --verbose"
+    "test": "standard | snazzy --verbose && ava --require babel-register --verbose"
   },
   "dependencies": {
     "react-native": "^0.21.0"
   },
   "devDependencies": {
+    "ava": "^0.13.0",
     "snazzy": "^3.0.0",
     "standard": "^5.4.1"
+  },
+  "ava": {
+    "require": ["babel-register"]
+  },
+  "babel": {
+    "presets": ["react-native"]
   }
 }
