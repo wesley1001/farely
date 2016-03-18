@@ -6,6 +6,16 @@ import Button from './components/Button'
 const {StyleSheet, View, Text} = React
 
 class App extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      maxToSpend: 0,
+      remainingBalance: 0,
+      data: []
+    }
+  }
+
   render () {
     return (
     <View style={styles.container}>
@@ -14,8 +24,14 @@ class App extends Component {
         <Text style={styles.text}>
           Hello!
         </Text>
-        <Input description='Remaining balance' />
-        <Input description='Max $ to spend' />
+        <Input
+          value={this.state.maxToSpend}
+          description='Remaining balance'
+          onChange={(remainingBalance) => this.setState({remainingBalance})} />
+        <Input
+          value={this.state.remainingBalance}
+          description='Max $ to spend'
+          onChange={(maxToSpend) => this.setState({maxToSpend})} />
         <Button />
       </View>
     </View>

@@ -4,18 +4,20 @@ const {StyleSheet, TextInput} = React
 
 class Input extends Component {
   render () {
-    let {description} = this.props
+    let {description, onChange} = this.props
 
     return (
       <TextInput style={styles.input}
-                 returnKeyType='done'
+                 keyboardType='decimal-pad'
+                 onChangeText={onChange}
                  placeholder={description} />
     )
   }
 }
 
 Input.propTypes = {
-  description: React.propTypes.string
+  description: React.PropTypes.string,
+  onChange: React.PropTypes.func
 }
 
 const styles = StyleSheet.create({
