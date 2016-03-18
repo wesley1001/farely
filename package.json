@@ -14,6 +14,7 @@
     "test": "standard | snazzy --verbose && ava --verbose"
   },
   "dependencies": {
+    "plur": "^2.1.2",
     "react-native": "^0.21.0"
   },
   "devDependencies": {
@@ -22,9 +23,13 @@
     "standard": "^5.4.1"
   },
   "ava": {
-    "require": ["babel-register"]
+    "require": [
+      "babel-register"
+    ]
   },
   "babel": {
-    "presets": ["react-native"]
+    "presets": [
+      "react-native"
+    ]
   }
 }
