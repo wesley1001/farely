@@ -1,5 +1,6 @@
 import React, {Component} from 'react-native'
 import Header from './components/Header'
+import Button from './components/Button'
 
 const {StyleSheet, View, Text} = React
 
@@ -12,6 +13,7 @@ class App extends Component {
         <Text style={styles.text}>
           Hello!
         </Text>
+        <Button />
       </View>
     </View>
     )
