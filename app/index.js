@@ -20,14 +20,13 @@ class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: '#EFEFEF',
-    flex: 1
+    paddingTop: 30
   },
   content: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center'
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   text: {
     fontSize: 28

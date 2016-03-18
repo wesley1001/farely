@@ -14,15 +14,13 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#3F5765',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    paddingTop: 15,
-    paddingBottom: 10
+    backgroundColor: '#2B3A42',
+    height: 60,
+    justifyContent: 'center'
   },
   text: {
     color: '#EFEFEF',
-    fontSize: 36,
+    fontSize: 30,
     alignSelf: 'center'
   }
 })
