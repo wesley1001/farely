@@ -32,10 +32,14 @@ class App extends Component {
           value={this.state.remainingBalance}
           description='Max $ to spend'
           onChange={(maxToSpend) => this.setState({maxToSpend})} />
-        <Button />
+        <Button onButtonPress={this._onButtonPress} />
       </View>
     </View>
     )
+  }
+
+  _onButtonPress () {
+    console.log('Hello!')
   }
 }
 

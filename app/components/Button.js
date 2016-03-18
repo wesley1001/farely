@@ -10,9 +10,12 @@ class Button extends Component {
     }
   }
   render () {
+    let {onButtonPress} = this.props
+
     return (
       <TouchableHighlight
         style={styles.touchable}
+        onPress={onButtonPress}
         onPressIn={this._onPressIn.bind(this)}
         onPressOut={this._onPressOut.bind(this)}>
 
@@ -29,6 +32,10 @@ class Button extends Component {
   _onPressOut () {
     this.setState({pressed: false})
   }
+}
+
+Button.propTypes = {
+  onButtonPress: React.PropTypes.func
 }
 
 const styles = StyleSheet.create({
