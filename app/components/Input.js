@@ -8,7 +8,7 @@ class Input extends Component {
 
     return (
       <TextInput style={styles.input}
-                 keyboardType='decimal-pad'
+                 keyboardType='numeric'
                  onChangeText={onChange}
                  placeholder={description} />
     )
