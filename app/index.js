@@ -38,6 +38,7 @@ class App extends Component {
           onChange={(maxToSpend) => this.setState({maxToSpend})} />
         <Button onButtonPress={this._onButtonPress.bind(this)} />
         <ListView
+          style={styles.list}
           dataSource={this.state.dataSource}
           renderRow={Item} />
       </View>
@@ -70,6 +71,9 @@ const styles = StyleSheet.create({
   content: {
     flexDirection: 'column',
     alignItems: 'center'
+  },
+  list: {
+    marginTop: 25
   },
   text: {
     fontSize: 28
