@@ -1,5 +1,6 @@
 import React, {Component} from 'react-native'
 import Header from './components/Header'
+import Input from './components/Input'
 import Button from './components/Button'
 
 const {StyleSheet, View, Text} = React
@@ -13,6 +14,8 @@ class App extends Component {
         <Text style={styles.text}>
           Hello!
         </Text>
+        <Input description='Remaining balance' />
+        <Input description='Max $ to spend' />
         <Button />
       </View>
     </View>
