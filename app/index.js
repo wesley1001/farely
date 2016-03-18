@@ -5,7 +5,7 @@ import Button from './components/Button'
 import Item from './components/Item'
 import fare from './fare'
 
-const {StyleSheet, View, Text, ListView} = React
+const {StyleSheet, View, ListView} = React
 
 class App extends Component {
   constructor () {
@@ -22,27 +22,26 @@ class App extends Component {
 
   render () {
     return (
-    <View style={styles.container}>
-      <Header />
-      <View style={styles.content}>
-        <Text style={styles.text}>
-          Hello!
-        </Text>
-        <Input
-          value={this.state.maxToSpend}
-          description='Remaining balance'
-          onChange={(remainingBalance) => this.setState({remainingBalance})} />
-        <Input
-          value={this.state.remainingBalance}
-          description='Max $ to spend'
-          onChange={(maxToSpend) => this.setState({maxToSpend})} />
-        <Button onButtonPress={this._onButtonPress.bind(this)} />
-        <ListView
-          style={styles.list}
-          dataSource={this.state.dataSource}
-          renderRow={Item} />
+      <View style={styles.container}>
+        <Header />
+        <View style={styles.inputs}>
+          <Input
+            value={this.state.maxToSpend}
+            description='Remaining balance'
+            onChange={(remainingBalance) => this.setState({remainingBalance})} />
+          <Input
+            value={this.state.remainingBalance}
+            description='Max $ to spend'
+            onChange={(maxToSpend) => this.setState({maxToSpend})} />
+          <Button onButtonPress={this._onButtonPress.bind(this)} />
+        </View>
+          <View style={styles.fares}>
+            <ListView
+              style={styles.list}
+              dataSource={this.state.dataSource}
+              renderRow={Item} />
+          </View>
       </View>
-    </View>
     )
   }
 
@@ -68,8 +67,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#EFEFEF',
     paddingTop: 30
   },
-  content: {
-    flexDirection: 'column',
+  inputs: {
+    marginTop: 40,
+    alignItems: 'stretch'
+  },
+  fares: {
     alignItems: 'center'
   },
   list: {

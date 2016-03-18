@@ -13,17 +13,19 @@ class Button extends Component {
     let {onButtonPress} = this.props
 
     return (
-      <TouchableHighlight
-        style={styles.touchable}
-        onPress={onButtonPress}
-        onPressIn={this._onPressIn.bind(this)}
-        onPressOut={this._onPressOut.bind(this)}>
+      <View style={styles.main}>
+        <TouchableHighlight
+          style={styles.touchable}
+          onPress={onButtonPress}
+          onPressIn={this._onPressIn.bind(this)}
+          onPressOut={this._onPressOut.bind(this)}>
 
-        <View style={styles.button}>
-          <Text style={styles.text}>CALCULATE</Text>
-        </View>
+          <View style={styles.button}>
+            <Text style={styles.text}>CALCULATE</Text>
+          </View>
 
-      </TouchableHighlight>
+        </TouchableHighlight>
+      </View>
     )
   }
   _onPressIn () {
@@ -39,6 +41,9 @@ Button.propTypes = {
 }
 
 const styles = StyleSheet.create({
+  main: {
+    alignItems: 'center'
+  },
   touchable: {
     borderRadius: 5
   },
