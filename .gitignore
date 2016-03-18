@@ -32,3 +32,6 @@ local.properties
 #
 node_modules/
 npm-debug.log
+
+# Temp files I sometimes use to test stuff
+temp.js
