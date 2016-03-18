@@ -2,6 +2,7 @@ import React, {Component} from 'react-native'
 import Header from './components/Header'
 import Input from './components/Input'
 import Button from './components/Button'
+import fare from './fare'
 
 const {StyleSheet, View, Text} = React
 
@@ -32,14 +33,19 @@ class App extends Component {
           value={this.state.remainingBalance}
           description='Max $ to spend'
           onChange={(maxToSpend) => this.setState({maxToSpend})} />
-        <Button onButtonPress={this._onButtonPress} />
+        <Button onButtonPress={this._onButtonPress.bind(this)} />
       </View>
     </View>
     )
   }
 
   _onButtonPress () {
-    console.log('Hello!')
+    let {remainingBalance, maxToSpend} = this.state
+
+    remainingBalance = Number(remainingBalance)
+    maxToSpend = Number(maxToSpend)
+
+    console.log(fare(remainingBalance, maxToSpend))
   }
 }
 
