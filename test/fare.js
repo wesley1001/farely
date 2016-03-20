@@ -1,6 +1,12 @@
 import test from 'ava'
 import fn from '../app/fare'
 
+test('takes no data', t => {
+  let amounts = fn(0, 0)
+
+  t.is(amounts.length, 0)
+})
+
 test('takes $0 balance', t => {
   let amounts = fn(0, 40)
 

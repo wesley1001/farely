@@ -35,6 +35,7 @@ const amountToAdd = (fare, balanceLeft) => {
 
 const amountsToAdd = (balanceLeft, maxToSpend) => {
   if (balanceLeft === null || maxToSpend === null) return []
+  if (balanceLeft === 0 && maxToSpend === 0) return []
 
   let purchases = []
   let fares = createFareMultiples(maxToSpend)
