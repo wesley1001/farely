@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Input from './components/Input'
 import Button from './components/Button'
 import Fares from './components/Fares'
+import Instructions from './components/Instructions'
 import fare from './fare'
 
 const {StyleSheet, View, ListView} = React
@@ -16,11 +17,14 @@ class App extends Component {
     this.state = {
       maxToSpend: 0,
       remainingBalance: 0,
-      dataSource: ds.cloneWithRows([])
+      dataSource: ds.cloneWithRows([]),
+      fetched: false
     }
   }
 
   render () {
+    let {fetched} = this.state
+
     return (
       <View style={styles.container}>
         <Header />
@@ -35,7 +39,7 @@ class App extends Component {
             onChange={(maxToSpend) => this.setState({maxToSpend})} />
           <Button onButtonPress={this._onButtonPress.bind(this)} />
         </View>
-        <Fares dataSource={this.state.dataSource} />
+        {fetched ? <Fares dataSource={this.state.dataSource} /> : <Instructions />}
       </View>
     )
   }
@@ -51,6 +55,7 @@ class App extends Component {
     console.log('Fares:', fares)
 
     this.setState({
+      fetched: true,
       dataSource: this.state.dataSource.cloneWithRows(fares)
     })
   }
