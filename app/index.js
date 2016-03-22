@@ -2,7 +2,7 @@ import React, {Component} from 'react-native'
 import Header from './components/Header'
 import Input from './components/Input'
 import Button from './components/Button'
-import Item from './components/Item'
+import Fares from './components/Fares'
 import fare from './fare'
 
 const {StyleSheet, View, ListView} = React
@@ -35,12 +35,7 @@ class App extends Component {
             onChange={(maxToSpend) => this.setState({maxToSpend})} />
           <Button onButtonPress={this._onButtonPress.bind(this)} />
         </View>
-          <View style={styles.fares}>
-            <ListView
-              style={styles.list}
-              dataSource={this.state.dataSource}
-              renderRow={Item} />
-          </View>
+        <Fares dataSource={this.state.dataSource} />
       </View>
     )
   }
@@ -70,12 +65,6 @@ const styles = StyleSheet.create({
   inputs: {
     marginTop: 40,
     alignItems: 'stretch'
-  },
-  fares: {
-    alignItems: 'center'
-  },
-  list: {
-    marginTop: 25
   },
   text: {
     fontSize: 28
