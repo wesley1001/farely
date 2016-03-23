@@ -4,6 +4,7 @@ import Input from './components/Input'
 import Button from './components/Button'
 import Fares from './components/Fares'
 import Instructions from './components/Instructions'
+import Err from './components/Error'
 import fare from './fare'
 
 const {StyleSheet, View, ListView} = React
@@ -18,16 +19,17 @@ class App extends Component {
       maxToSpend: 0,
       remainingBalance: 0,
       dataSource: ds.cloneWithRows([]),
-      fetched: false
+      fetched: false,
+      error: false
     }
   }
 
   render () {
-    let {fetched} = this.state
+    let {fetched, error} = this.state
     let content
 
     if (fetched) {
-      content = <Fares dataSource={this.state.dataSource} />
+      content = error ? <Err /> : <Fares dataSource={this.state.dataSource} />
     } else {
       content = <Instructions />
     }
@@ -62,10 +64,17 @@ class App extends Component {
 
     console.log('Fares:', fares)
 
-    this.setState({
-      fetched: true,
-      dataSource: this.state.dataSource.cloneWithRows(fares)
-    })
+    if (fares.length === 0) {
+      this.setState({
+        fetched: true,
+        error: true
+      })
+    } else {
+      this.setState({
+        fetched: true,
+        dataSource: this.state.dataSource.cloneWithRows(fares)
+      })
+    }
   }
 }
 
