@@ -24,6 +24,13 @@ class App extends Component {
 
   render () {
     let {fetched} = this.state
+    let content
+
+    if (fetched) {
+      content = <Fares dataSource={this.state.dataSource} />
+    } else {
+      content = <Instructions />
+    }
 
     return (
       <View style={styles.container}>
@@ -39,7 +46,8 @@ class App extends Component {
             onChange={(maxToSpend) => this.setState({maxToSpend})} />
           <Button onButtonPress={this._onButtonPress.bind(this)} />
         </View>
-        {fetched ? <Fares dataSource={this.state.dataSource} /> : <Instructions />}
+
+        {content}
       </View>
     )
   }
