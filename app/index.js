@@ -72,6 +72,7 @@ class App extends Component {
     } else {
       this.setState({
         fetched: true,
+        error: false,
         dataSource: this.state.dataSource.cloneWithRows(fares)
       })
     }
