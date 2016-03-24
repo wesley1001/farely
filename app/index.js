@@ -4,6 +4,7 @@ import Input from './components/Input'
 import Button from './components/Button'
 import Fares from './components/Fares'
 import Instructions from './components/Instructions'
+import Footer from './components/Footer'
 import Err from './components/Error'
 import fare from './fare'
 
@@ -48,8 +49,8 @@ class App extends Component {
             onChange={(maxToSpend) => this.setState({maxToSpend})} />
           <Button onButtonPress={this._onButtonPress.bind(this)} />
         </View>
-
         {content}
+        <Footer />
       </View>
     )
   }
