@@ -5,7 +5,9 @@ const {StyleSheet, Text, View} = React
 
 const Item = ({amount, rides}) =>
   <View style={styles.row}>
-    <Text style={styles.text}>${amount} for {rides} {pluralizeRides(rides)}</Text>
+    <Text style={styles.text}>
+      <Text style={styles.bold}>${amount}</Text> for <Text style={styles.bold}>{rides}</Text> {pluralizeRides(rides)}
+    </Text>
   </View>
 
 const pluralizeRides = number => plur('ride', number)
@@ -20,6 +22,9 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
     fontSize: 24
+  },
+  bold: {
+    fontWeight: 'bold'
   }
 })
 
