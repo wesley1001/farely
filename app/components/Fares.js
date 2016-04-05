@@ -8,7 +8,7 @@ class Fares extends Component {
     return (
       <View style={styles.fares}>
         <ListView
-          style={styles.list}
+          style={{marginTop: 20}}
           dataSource={this.props.dataSource}
           renderRow={Item} />
       </View>
@@ -22,10 +22,9 @@ Fares.propTypes = {
 
 const styles = StyleSheet.create({
   fares: {
+    flex: 2,
+    marginBottom: 20,
     alignItems: 'center'
-  },
-  list: {
-    marginTop: 25
   }
 })
 
