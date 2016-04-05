@@ -7,7 +7,7 @@ import Information from './components/Information'
 import Err from './components/Error'
 import fare from './fare'
 
-const {StyleSheet, View, ListView} = React
+const {StyleSheet, View, ListView, LayoutAnimation} = React
 
 class App extends Component {
   constructor () {
@@ -57,6 +57,8 @@ class App extends Component {
   _onButtonPress () {
     let {remainingBalance, maxToSpend} = this.state
 
+    this.setState({fetched: false})
+
     remainingBalance = Number(remainingBalance)
     maxToSpend = Number(maxToSpend)
 
@@ -70,6 +72,8 @@ class App extends Component {
         error: true
       })
     } else {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+
       this.setState({
         fetched: true,
         error: false,
