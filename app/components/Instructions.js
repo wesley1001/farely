@@ -17,12 +17,11 @@ class Instructions extends Component {
 const styles = StyleSheet.create({
   instructions: {
     justifyContent: 'center',
-    marginTop: 50,
     paddingLeft: 10,
     paddingRight: 10
   },
   text: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center'
   }
 })
