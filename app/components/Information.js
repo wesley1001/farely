@@ -1,4 +1,5 @@
 import React, {Component} from 'react-native'
+import Instructions from './Instructions'
 
 const {StyleSheet, View, Text} = React
 
@@ -6,7 +7,8 @@ class Footer extends Component {
   render () {
     return (
       <View style={styles.footer}>
-        <Text style={styles.text}>
+        <Instructions />
+        <Text style={styles.credits}>
           Created by Juan Soto, but inspired by Ian McNally.
         </Text>
       </View>
@@ -16,14 +18,13 @@ class Footer extends Component {
 
 const styles = StyleSheet.create({
   footer: {
-    position: 'absolute',
-    right: 10,
-    bottom: 20,
-    left: 10
+    marginTop: 10,
+    marginBottom: 10
   },
-  text: {
-    fontSize: 17,
-    textAlign: 'center'
+  credits: {
+    fontSize: 15,
+    textAlign: 'center',
+    marginTop: 10
   }
 })
 

@@ -3,12 +3,11 @@ import Header from './components/Header'
 import Input from './components/Input'
 import Button from './components/Button'
 import Fares from './components/Fares'
-import Instructions from './components/Instructions'
-import Footer from './components/Footer'
+import Information from './components/Information'
 import Err from './components/Error'
 import fare from './fare'
 
-const {StyleSheet, View, ListView} = React
+const {StyleSheet, View, ListView, LayoutAnimation} = React
 
 class App extends Component {
   constructor () {
@@ -32,12 +31,13 @@ class App extends Component {
     if (fetched) {
       content = error ? <Err /> : <Fares dataSource={this.state.dataSource} />
     } else {
-      content = <Instructions />
+      content = null
     }
 
     return (
       <View style={styles.container}>
         <Header />
+        <Information />
         <View style={styles.inputs}>
           <Input
             value={this.state.maxToSpend}
@@ -50,13 +50,14 @@ class App extends Component {
           <Button onButtonPress={this._onButtonPress.bind(this)} />
         </View>
         {content}
-        <Footer />
       </View>
     )
   }
 
   _onButtonPress () {
     let {remainingBalance, maxToSpend} = this.state
+
+    this.setState({fetched: false})
 
     remainingBalance = Number(remainingBalance)
     maxToSpend = Number(maxToSpend)
@@ -71,6 +72,8 @@ class App extends Component {
         error: true
       })
     } else {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+
       this.setState({
         fetched: true,
         error: false,
@@ -87,7 +90,7 @@ const styles = StyleSheet.create({
     paddingTop: 30
   },
   inputs: {
-    marginTop: 40,
+    marginTop: 10,
     alignItems: 'stretch'
   },
   text: {
